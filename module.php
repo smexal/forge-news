@@ -11,6 +11,7 @@ class ForgeNews extends Module {
   }
 
     public function start() {
+        require_once($this->directory()."teaser-component.php");
         require_once($this->directory()."collection.php");
     }
 }

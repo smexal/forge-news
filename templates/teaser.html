@@ -1,0 +1,12 @@
+<div class="news-teaser">
+    <h2>{$title}</h2>
+    <div class="blocks">
+    {loop="$news"}
+        <a class="block">
+            <span class="date">{$value.date}</span>
+            <h3>{$value.title}</h3>
+            <p class="teaser">{$value.description}</p>
+        </a>
+    {/loop}
+    </div>
+</div>
