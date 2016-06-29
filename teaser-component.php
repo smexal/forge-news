@@ -36,7 +36,8 @@ class ForgeNewsTeaser extends Component {
                 'id' => $item['id'],
                 'title' => $news->getMeta('title'),
                 'description' => $news->getMeta('description'),
-                'date' => Utils::dateFormat($item['created'])
+                'date' => Utils::dateFormat($item['created']),
+                'url' => $news->url()
             ));
         }
 
