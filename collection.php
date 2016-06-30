@@ -12,17 +12,37 @@ class ForgeNewsCollection extends DataCollection {
     $this->custom_fields();
   }
 
+  public function render($item) {
+    return App::instance()->render(MOD_ROOT."forge-news/templates/", "detail", array(
+      'title' => $item->getMeta('title'),
+      'description' => $item->getMeta('description'),
+      'text' => $item->getMeta('text'),
+      'page_url' => $item->url(),
+      'page_identifier' => $this->preferences['name'].'_'.$item->id,
+      'comments' => $item->getMeta('comments') // todo: set per news entry
+    ));
+  }
+
   private function custom_fields() {
     $this->addFields(array(
         array(
             'key' => 'text',
-            'label' => i('Text', 'core'),
+            'label' => i('Text', 'forge-news'),
             'multilang' => true,
             'type' => 'wysiwyg',
             'order' => 20,
             'position' => 'left',
             'hint' => ''
         ),
+        array(
+            'key' => 'comments',
+            'label' => i('Allow Comments (Disqus)', 'forge-news'),
+            'multilang' => true,
+            'type' => 'checkbox',
+            'order' => 20,
+            'position' => 'right',
+            'hint' => ''
+        )
     ));
   }
 }

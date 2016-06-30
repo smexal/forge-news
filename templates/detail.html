@@ -1,0 +1,27 @@
+<div class="no-intro clearfix">
+<div class="wrapped">
+    <div class="col-md-8">
+        <h1>{$title}</h1>
+        <p class="lead">{$description}</p>
+        {$text}
+    </div>
+    {if="$comments"}
+    <div class="col-md-8" id="disqus_thread"></div>
+    <script>
+        var disqus_config = function () {
+            this.page.url = "{$page_url}";
+            this.page.identifier = "{$page_identifier}";
+        };
+        (function() {  // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            
+            s.src = '//butterlan.disqus.com/embed.js';
+            
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+    {/if}
+</div>
+</div>
