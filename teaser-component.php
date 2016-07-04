@@ -27,17 +27,17 @@ class ForgeNewsTeaser extends Component {
         $items = $collection->items(array(
             'order' => 'created',
             'order_direction' => 'desc',
-            'limit' => 4
+            'limit' => 4,
+            'status' => 'published'
         ));
         $news_items = array();
         foreach($items as $item) {
-            $news = $collection->getItem($item['id']);
             array_push($news_items, array(
-                'id' => $item['id'],
-                'title' => $news->getMeta('title'),
-                'description' => $news->getMeta('description'),
-                'date' => Utils::dateFormat($item['created']),
-                'url' => $news->url()
+                'id' => $item->id,
+                'title' => $item->getMeta('title'),
+                'description' => $item->getMeta('description'),
+                'date' => Utils::dateFormat($item->getCreationDate()),
+                'url' => $item->url()
             ));
         }
 
