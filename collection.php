@@ -17,7 +17,7 @@ class ForgeNewsCollection extends DataCollection {
       'title' => $item->getMeta('title'),
       'description' => $item->getMeta('description'),
       'text' => $item->getMeta('text'),
-      'page_url' => $item->url(),
+      'page_url' => $item->absUrl(),
       'page_identifier' => $this->preferences['name'].'_'.$item->id,
       'comments' => $item->getMeta('comments') // todo: set per news entry
     ));
