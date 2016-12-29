@@ -1,6 +1,10 @@
-<?
+<?php
 
-class ForgeNews extends Module {
+namespace Forge\Modules\ForgeNews;
+
+use \Forge\Core\Abstracts as Abstracts;
+
+class ForgeNews extends Abstracts\Module {
 
   public function setup() {
         $this->settings = Settings::instance();
