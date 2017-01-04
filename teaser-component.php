@@ -1,5 +1,13 @@
 <?php
 
+namespace Forge\Modules\ForgeNews;
+
+use \Forge\Core\Abstracts\Component;
+use \Forge\Core\App\App;
+use \Forge\Core\Classes\Utils;
+
+use function \Forge\Core\Classes\i;
+
 class ForgeNewsTeaser extends Component {
     public $settings = array();
 
@@ -46,7 +54,6 @@ class ForgeNewsTeaser extends Component {
             'news' => $news_items
         ));
     }
-
 }
 
 ?>
