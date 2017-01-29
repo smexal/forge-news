@@ -8,16 +8,14 @@ use \Forge\Core\App\App;
 use function \Forge\Core\Classes\i;
 
 class ForgeNewsCollection extends DataCollection {
-  public $permission = "manage.collection.sites";
+  public static $name = 'forge-news';
+  public static $permission = "manage.collection.sites";
 
   protected function setup() {
-    $this->preferences['name'] = 'forge-news';
     $this->preferences['title'] = i('News', 'forge-news');
     $this->preferences['all-title'] = i('Manage News', 'forge-news');
     $this->preferences['add-label'] = i('Add news', 'forge-news');
     $this->preferences['single-item'] = i('News', 'forge-news');
-
-    $this->custom_fields();
   }
 
   public function render($item) {
@@ -31,7 +29,7 @@ class ForgeNewsCollection extends DataCollection {
     ));
   }
 
-  private function custom_fields() {
+  public function customFields() {
     $this->addFields(array(
         array(
             'key' => 'text',
