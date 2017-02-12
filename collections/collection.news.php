@@ -5,9 +5,9 @@ namespace Forge\Modules\ForgeNews;
 use \Forge\Core\Abstracts\DataCollection;
 use \Forge\Core\App\App;
 
-use function \Forge\Core\Classes\i;
 
-class ForgeNewsCollection extends DataCollection {
+
+class NewsCollection extends DataCollection {
   public $permission = "manage.collection.sites";
 
   protected function setup() {

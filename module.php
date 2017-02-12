@@ -5,7 +5,7 @@ namespace Forge\Modules\ForgeNews;
 use \Forge\Core\Abstracts\Module;
 use \Forge\Core\Classes\Settings;
 
-use function \Forge\Core\Classes\i;
+
 
 class ForgeNews extends Module {
 
@@ -18,8 +18,6 @@ class ForgeNews extends Module {
     }
 
     public function start() {
-        require_once($this->directory()."teaser-component.php");
-        require_once($this->directory()."collection.php");
     }
 }
 

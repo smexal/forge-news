@@ -6,9 +6,9 @@ use \Forge\Core\Abstracts\Component;
 use \Forge\Core\App\App;
 use \Forge\Core\Classes\Utils;
 
-use function \Forge\Core\Classes\i;
 
-class ForgeNewsTeaser extends Component {
+
+class TeaserComponent extends Component {
     public $settings = array();
 
     public function prefs() {
