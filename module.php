@@ -5,8 +5,6 @@ namespace Forge\Modules\ForgeNews;
 use \Forge\Core\Abstracts\Module;
 use \Forge\Core\Classes\Settings;
 
-use function \Forge\Core\Classes\i;
-
 class ForgeNews extends Module {
 
     public function setup() {

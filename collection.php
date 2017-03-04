@@ -8,8 +8,8 @@ use \Forge\Core\App\App;
 use function \Forge\Core\Classes\i;
 
 class ForgeNewsCollection extends DataCollection {
-  public static $name = 'forge-news';
-  public static $permission = "manage.collection.sites";
+  public $name = 'forge-news';
+  public $permission = "manage.collection.sites";
 
   protected function setup() {
     $this->preferences['title'] = i('News', 'forge-news');
