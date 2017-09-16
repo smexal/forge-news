@@ -16,7 +16,9 @@ class NewsCollection extends DataCollection {
     $this->preferences['all-title'] = i('Manage News', 'forge-news');
     $this->preferences['add-label'] = i('Add news', 'forge-news');
     $this->preferences['single-item'] = i('News', 'forge-news');
-    $this->preferences['categories'] = true;
+    $this->preferences['has_categories'] = true;
+    $this->preferences['has_status'] = true;
+    $this->preferences['has_image'] = true;
 
     $this->custom_fields();
   }
