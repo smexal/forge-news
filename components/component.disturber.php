@@ -8,7 +8,7 @@ use \Forge\Core\Classes\Utils;
 
 
 
-class DisruptorComponent extends Component {
+class DisturberComponent extends Component {
     public $settings = array();
 
     public function prefs() {
@@ -28,20 +28,30 @@ class DisruptorComponent extends Component {
             array(
                 "label" => i('Call to Action Title', 'forge-news'),
                 "hint" => '',
-                "key" => "subtitle",
+                "key" => "cta_title",
                 "type" => "text"
             ),
             array(
                 "label" => i('Call to Action Link', 'forge-news'),
                 "hint" => '',
-                "key" => "subtitle",
+                "key" => "cta_link",
                 "type" => "url"
+            ),
+            array(
+                "label" => i('Call to Action Target', 'forge-news'),
+                "hint" => '',
+                "key" => "cta_target",
+                "type" => "select",
+                "values" => [
+                    '_self' => i('Same Windows', 'forge-news'),
+                    '_blank' => i('New Window', 'forge-news')
+                ]
             )
         );
         return array(
-            'name' => i('Disruptor Element', 'forge-news'),
+            'name' => i('Disturber Element', 'forge-news'),
             'description' => i('Fancy Disruptor Element'),
-            'id' => 'forge-disruptor',
+            'id' => 'forge-disturber',
             'image' => '',
             'level' => 'inner',
             'container' => false
@@ -67,9 +77,12 @@ class DisruptorComponent extends Component {
             ));
         }
 
-        return App::instance()->render(DOC_ROOT.'modules/forge-news/templates/', "teaser", array(
+        return App::instance()->render(DOC_ROOT.'modules/forge-news/templates/', "disturber", array(
             'title' => $this->getField('title'),
-            'news' => $news_items
+            'subtitle' => $this->getField('subtitle'),
+            'cta_title' => $this->getField('cta_title'),
+            'cta_link' => $this->getField('cta_link'),
+            'cta_target' => $this->getField('cta_target'),
         ));
     }
 }

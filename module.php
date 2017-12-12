@@ -2,8 +2,9 @@
 
 namespace Forge\Modules\ForgeNews;
 
-use \Forge\Core\Abstracts\Module;
-use \Forge\Core\Classes\Settings;
+use Forge\Core\App\App;
+use Forge\Core\Abstracts\Module;
+use Forge\Core\Classes\Settings;
 
 
 
@@ -18,6 +19,7 @@ class ForgeNews extends Module {
     }
 
     public function start() {
+        App::instance()->tm->theme->addStyle(MOD_ROOT . "forge-news/css/disturber.less");
     }
 }
 
