@@ -1,0 +1,19 @@
+<div class="forge-news-teaser-big reveal bar-left">
+    <div class="wrapped row">
+        <div class="col-lg-6">
+            <h1>{$title}</h1>
+            <div class="text">{$text}</div>
+            <div class="actions">
+                {if="$cta.url != '' && $cta.title != ''"} 
+                <a class="btn btn-primary" href="{$cta.url}" target="{$cta.target}">{$cta.title}</a>
+                {/if}
+                {if="$sec_cta.url != '' && $sec_cta.title != ''"} 
+                <a class="btn btn-default" href="{$sec_cta.url}" target="{$sec_cta.target}">{$sec_cta.title}</a>
+                {/if}
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <img src="{$img}" />
+        </div>
+    </div>
+</div>

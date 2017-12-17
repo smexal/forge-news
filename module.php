@@ -20,6 +20,7 @@ class ForgeNews extends Module {
 
     public function start() {
         App::instance()->tm->theme->addStyle(MOD_ROOT . "forge-news/css/disturber.less");
+        App::instance()->tm->theme->addStyle(MOD_ROOT . "forge-news/css/bigteaser.less");
     }
 }
 
