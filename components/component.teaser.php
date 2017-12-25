@@ -14,11 +14,17 @@ class TeaserComponent extends Component {
     public function prefs() {
         $this->settings = array(
             array(
-                "label" => i('Title'),
+                "label" => i('Title', 'forge-news'),
                 "hint" => '',
                 "key" => "title",
                 "type" => "text"
-            )
+            ),
+            array(
+                "label" => i('Limit the amount of news', 'forge-news'),
+                "hint" => '',
+                "key" => "limit",
+                "type" => "number"
+            ),
         );
         return array(
             'name' => i('News Teaser'),
@@ -31,11 +37,15 @@ class TeaserComponent extends Component {
     }
 
     public function content() {
+        $limit = 4;
+        if($this->getField('limit')) {
+            $limit = $this->getField('limit');
+        }
         $collection = App::instance()->cm->getCollection('forge-news');
         $items = $collection->items(array(
             'order' => 'created',
             'order_direction' => 'desc',
-            'limit' => 4,
+            'limit' => $limit,
             'status' => 'published'
         ));
         $news_items = array();

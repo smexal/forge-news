@@ -1,12 +1,18 @@
-<div class="news-teaser row">
-    <h2>{$title}</h2>
-    <div class="blocks row">
-    {loop="$news"}
-        <a class="block" href="{$value.url}">
-            <span class="date">{$value.date}</span>
-            <h3>{$value.title}</h3>
-            <p class="teaser">{$value.description}</p>
-        </a>
-    {/loop}
+<div class="wrapper news-teaser">
+    <div class="row">
+        <div class="col-lg-12">
+            <h2 class="reveal">{$title}</h2>
+            <div class="blocks row">
+                <div class="col-lg-12">
+                {loop="$news"}
+                    <a class="block reveal" href="{$value.url}">
+                        <span class="date">{$value.date}</span>
+                        <h3>{$value.title}</h3>
+                        <p class="teaser">{$value.description}</p>
+                    </a>
+                {/loop}
+                </div>
+            </div>
+        </div>
     </div>
 </div>
