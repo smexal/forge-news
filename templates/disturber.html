@@ -1,9 +1,9 @@
 <a class="forge-news-disturber reveal" href="{$cta_link}" target="{$cta_target}">
     <div class="wrapped row">
         {if="$image"}
-        <div class="col-lg-1 image"><img src="{$image}" /></div>
+        <div class="col-lg-1 col-md-1 col-xs-2 image"><img src="{$image}" /></div>
         {/if}
-        <div class="col-lg-7 left">
+        <div class="{if="!$image"}col-lg-8 col-md-8 col-xs-12{else}col-lg-7 col-md-7 col-md-7 col-xs-10{/if} left">
             <span class="cta-light">{$subtitle}</span>
             <h4>{$title}</h4>
         </div>

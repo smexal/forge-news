@@ -2,6 +2,7 @@
 
 namespace Forge\Modules\ForgeNews;
 
+use Forge\Core\Classes\Builder;
 use \Forge\Core\Abstracts\DataCollection;
 use \Forge\Core\App\App;
 
@@ -33,6 +34,11 @@ class NewsCollection extends DataCollection {
       'comments' => $item->getMeta('comments') // todo: set per news entry
     ));
   }
+
+    public function customEditContent($id) {
+        $builder = new Builder('collection', $id, 'newsContentBuilder');
+        return $builder->render();
+    }
 
   private function custom_fields() {
     $this->addFields(array(
