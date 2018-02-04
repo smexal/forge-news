@@ -4,6 +4,7 @@ namespace Forge\Modules\ForgeNews;
 
 use Forge\Core\Classes\Builder;
 use \Forge\Core\Abstracts\DataCollection;
+use \Forge\Core\Classes\Localization;
 use \Forge\Core\App\App;
 
 
@@ -25,14 +26,23 @@ class NewsCollection extends DataCollection {
   }
 
   public function render($item) {
-    return App::instance()->render(MOD_ROOT."forge-news/templates/", "detail", array(
-      'title' => $item->getMeta('title'),
-      'description' => $item->getMeta('description'),
-      'text' => $item->getMeta('text'),
-      'page_url' => $item->absUrl(),
-      'page_identifier' => $this->preferences['name'].'_'.$item->id,
-      'comments' => $item->getMeta('comments') // todo: set per news entry
-    ));
+      $builder = new Builder('collection', $item->getID(), 'newsContentBuilder');
+      $elements = $builder->getBuilderElements(Localization::getCurrentLanguage());
+
+      $builderContent = '';
+      foreach($elements as $element) {
+          $builderContent.=$element->content();
+      }
+
+      return App::instance()->render(MOD_ROOT."forge-news/templates/", "detail", array(
+          'title' => $item->getMeta('title'),
+          'description' => $item->getMeta('description'),
+          'text' => $item->getMeta('text'),
+          'page_url' => $item->absUrl(),
+          'page_identifier' => $this->preferences['name'].'_'.$item->id,
+          'builderContent' => $builderContent,
+          'comments' => $item->getMeta('comments') // todo: set per news entry
+      ));
   }
 
     public function customEditContent($id) {
