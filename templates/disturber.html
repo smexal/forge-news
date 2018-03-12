@@ -1,14 +1,16 @@
-<a class="forge-news-disturber reveal" href="{$cta_link}" target="{$cta_target}">
+{if="$cta_link"}<a{else}<div{/if} class="forge-news-disturber reveal" href="{$cta_link}" target="{$cta_target}">
     <div class="wrapped row">
         {if="$image"}
         <div class="col-lg-1 col-md-1 col-xs-2 image"><img src="{$image}" /></div>
         {/if}
-        <div class="{if="!$image"}col-lg-8 col-md-8 col-xs-12{else}col-lg-7 col-md-7 col-md-7 col-xs-10{/if} left">
+        <div class="{if="!$image"}col-md-10 col-xs-12{else}col-md-9 col-xs-10{/if} left">
             <span class="cta-light">{$subtitle}</span>
             <h4>{$title}</h4>
         </div>
-        <div class="col-lg-4 right">
+        {if="$cta_link"}
+        <div class="col-lg-2 right">
             <span class="cta-light"><span>{$cta_title}</span><span class="arrow"></span></span>
         </div>
+        {/if}
     </div>
-</a>
+{if="$cta_link"}</a>{else}</div>{/if} 
