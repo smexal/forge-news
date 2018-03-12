@@ -33,6 +33,12 @@ class BigteaserComponent extends Component {
                 "type" => "image"
             ),
             array(
+                "label" => i('Youtube Video', 'forge-news'),
+                "hint" => i('If this is set, the set image will be ignored and the youtube player will be displayed instead.', 'forge-news'),
+                "key" => "video",
+                "type" => "text"
+            ),
+            array(
                 "label" => i('Call to Action Title', 'forge-news'),
                 "hint" => '',
                 "key" => "cta_title",
@@ -93,6 +99,7 @@ class BigteaserComponent extends Component {
             'title' => $this->getField('title'),
             'text' => $this->getField('text'),
             'img' => $img->getUrl(),
+            'video' => $this->getField('video'),
             'cta' => [
                 'url' => $this->getField('cta_link'),
                 'title' => $this->getField('cta_title'),
