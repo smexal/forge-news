@@ -1,7 +1,9 @@
 <div class="wrapper news-teaser">
     <div class="row">
         <div class="col-lg-12">
+            {if="$title"}
             <h2 class="reveal">{$title}</h2>
+            {/if}
             <div class="blocks row">
                 <div class="col-lg-12">
                 {loop="$news"}
