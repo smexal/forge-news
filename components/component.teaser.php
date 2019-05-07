@@ -21,7 +21,7 @@ class TeaserComponent extends Component {
             ),
             array(
                 "label" => i('Limit the amount of news', 'forge-news'),
-                "hint" => '',
+                "hint" => '"-1" to display all.',
                 "key" => "limit",
                 "type" => "number"
             ),
@@ -40,6 +40,9 @@ class TeaserComponent extends Component {
         $limit = 4;
         if($this->getField('limit')) {
             $limit = $this->getField('limit');
+        }
+        if($limit == "-1") {
+            $limit = 0;
         }
         $collection = App::instance()->cm->getCollection('forge-news');
         $items = $collection->items(array(
