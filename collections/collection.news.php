@@ -21,8 +21,6 @@ class NewsCollection extends DataCollection {
     $this->preferences['has_categories'] = true;
     $this->preferences['has_status'] = true;
     $this->preferences['has_image'] = true;
-
-    $this->custom_fields();
   }
 
   public function render($item) {
@@ -50,7 +48,7 @@ class NewsCollection extends DataCollection {
         return $builder->render();
     }
 
-  private function custom_fields() {
+    public function custom_fields() {
     $this->addFields(array(
         array(
             'key' => 'text',
