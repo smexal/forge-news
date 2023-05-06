@@ -9,6 +9,7 @@ use Forge\Core\Classes\Settings;
 
 
 class ForgeNews extends Module {
+    public $settings;
 
     public function setup() {
         $this->settings = Settings::instance();
@@ -23,5 +24,3 @@ class ForgeNews extends Module {
         App::instance()->tm->theme->addStyle(MOD_ROOT . "forge-news/css/bigteaser.less");
     }
 }
-
-?>
